@@ -1,66 +1,54 @@
+window.onload = function iniciar() {
+    // setar placar 0
+    // criar jogadores
+    // ?
+}
+
 const condiçoes = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+var turno = 0
 
-function iniciar() {
-    const jogador1 = new Jogador(nome1)
-    const jogador2 = new Jogador(nome2)
-    const jogo = new Jogo(jogador1, jogador2)
-}
+function checar_condiçoes(botao) {
+    const tabuleiro = Array.from(document.getElementsByClassName("button-option")) //pega os botoes do tabuleiro
 
-
-class Jogo {
-    constructor(jogador1, jogador2){
-        this.placar = new Placar(jogador1, jogador2)
-        this.turno = 0
-    }
-
-
-    botao_valido(botao) {
-        if (botao.value == "") {
-            return true
-        }
-        return false
-    }
-
-    checar_condiçoes(botao){
-        if (this.botao_valido(botao)) {
-            if (this.turno == 0) {
-                botao.innerText  = "X"
-                this.turno = 1
-            } else {
-                botao.innerText  = "O"
-                this.turno = 0
-            }
-        }
-
-        const tabuleiro = Array.from(document.getElementsByClassName("button-option"))
-
-        for (combinaçao in condiçoes) {
-            sequencia = [tabuleiro[combinaçao[0]], tabuleiro[combinaçao[1]], tabuleiro[combinaçao[2]]]
-            if (sequencia.every(botao => botao.innerText === sequencia[0].innerText && botao.innerText !== "")){
-                this.vitoria()
-            }
-        }
-        
-        this.trocar_turno()
-    }
-
-    vitoria() {
-        if (this.turno == 0){
-            //X ganhou
+    const vitoria = function(sequencia) {
+        if (turno == 0) {
+            console.log("O") // MOSTRAR VENCEDOR
         } else {
-            //O ganhou
+            console.log("X")
+        }
+        tabuleiro.forEach(botao => botao.setAttribute("onclick", ""))
+        sequencia.forEach(botao => botao.style.color = "red")
+
+        //pontuar(turno)
+
+    }
+
+    const botao_valido = function(botao) {
+        if (botao.innerText == "") {
+            return true
+        } else {
+            return false
         }
     }
 
+    if (botao_valido(botao)) {          // checa se o lugar é valido
+        if (turno == 0) {
+            botao.innerText = "X"
+            turno = 1
+        } else {
+            botao.innerText = "O"
+            turno = 0
+        }
 
-    trocar_turno() {
+
+        condiçoes.forEach(combinaçao => {  // a partir das combinação, pega o index dela no tabuleiro e checa se sao todos iguais
+            sequencia = [tabuleiro[combinaçao[0]], tabuleiro[combinaçao[1]], tabuleiro[combinaçao[2]]]
+
+            if (sequencia.every(botao => botao.innerText === sequencia[0].innerText && botao.innerText !== "")) {
+                vitoria(sequencia)
+            }
+        }
+        )
 
     }
-
-    pontuar(jogador) {
-        
-    }
-
-
 }
-
