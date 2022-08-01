@@ -7,6 +7,8 @@
 
   body {
     background-color: black;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   html {
@@ -14,10 +16,9 @@
   }
   
   .wrapper {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 30%;
   }
 
   .container {
@@ -26,24 +27,72 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2vmin;
+    align-items: center;
   }
 
   .button-option {
     background: #ffffff;
-    height: 22vmin;
-    width: 22vmin;
+    height: 20vmin;
+    width: 20vmin;
     font-size: 12vmin;
     color: #d161ff;
     border: none;
+    margin: 0 auto;
   }
 
   #restart {
     font-size: 2vmin;
-    padding: 5vmin;
+    padding: 2vmin;
     text-align: center;
     background-color: rgb(74, 23, 216);
     color: #ffffff;
     position: relative;
-    margin: 1.5em auto 0 auto;
+    margin: 1em auto 0 auto;
     display: block;
+  }
+
+  #alterar-nome {
+    font-size: 2vmin;
+    padding: 2vmin;
+    text-align: center;
+    background-color: rgb(23, 129, 216);
+    color: #ffffff;
+    position: relative;
+    margin: 1em auto 0 auto;
+    display: block;
+  }
+
+  .infos{
+    color: white;
+    text-transform: uppercase;
+    width: 70vmin;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .div-placar{
+    color: white;
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 20vmin;
+    font-size: 5vmin;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .nome-jogador{
+    width: 25vmin;
+    justify-content: center;
+    align-self: center;
+    font-size: 3vmin;
+  }
+
+  #jog1{
+    text-align: left;
+  }
+  
+  #jog2{
+    text-align: right;
   }
