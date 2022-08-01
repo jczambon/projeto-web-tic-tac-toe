@@ -1,5 +1,9 @@
 window.onload = function iniciar() {
-    // setar placar 0
+    let contador1 = 0
+    let contador2 = 0
+    placar = document.getElementsByClassName("div-placar")[0]
+    placar.innerHTML = contador1 + ' x ' + contador2
+
     // criar jogadores
     // ?
 }
@@ -7,10 +11,15 @@ window.onload = function iniciar() {
 const condiçoes = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 var turno = 0
 
+let contador1 = 0
+let contador2 = 0
+let placar = document.getElementsByClassName("div-placar")[0]
+
 function delay(tempo) {
     return new Promise(resolve => setTimeout(resolve, tempo))
     //pontuar(turno)
 }
+
 
 function vitoria(sequencia_vitoriosa, tabuleiro) {    
     async function resetar_round(ganhador){
@@ -23,10 +32,12 @@ function vitoria(sequencia_vitoriosa, tabuleiro) {
     if (turno == 0) {
         document.getElementById("jog2").style.color = "green"
         console.log("O") // MOSTRAR VENCEDOR
+        this.mudar_placar(0)
         resetar_round("jog2")
     } else {
         document.getElementById("jog1").style.color = "green"
         console.log("X")
+        this.mudar_placar(1)
         resetar_round("jog1")
     }
 
@@ -80,3 +91,15 @@ function checar_condiçoes(botao) {
         }
     }
 }
+
+function mudar_placar(n_jogador){
+    if (n_jogador == 1){
+        contador1 += 1
+    } else if (n_jogador == 0) {
+        contador2 += 1
+    } else {
+        contador1 = 0
+        contador2 = 0
+    }
+    placar.innerHTML = contador1 + ' x ' + contador2
+}   
