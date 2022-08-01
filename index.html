@@ -21,16 +21,16 @@
         <div class="infos">
 
             <div class="nome-jogador" id="jog1">
-                <p>
-                    <B class="icon">X</B> Pedro
+                <p class="nome_peca">
+                    <B class="icon">X </B> <b id="jogador x">Jogador 1</b>
                 </p>
             </div>
             <div class="div-placar">
                 
             </div>
             <div class="nome-jogador" id="jog2"> 
-                <p>
-                    Pedro <B class="icon">O</B>
+                <p class="nome_peca">
+                    <b id="jogador o">Jogador 2</b> <B class="icon"> O</B>
                 </p>
             </div>
             
@@ -52,7 +52,10 @@
 
         <div id="restart" onclick="mudar_placar(4)"> <p> Resetar Placar</p></div>
 
-        <div id="alterar-nome"> <p>Alterar Nomes</p> </div>
+        <div id="alterar-nome">
+            <div id="alterar-jogador-x" onclick="altera_nome_x()"><p>Alterar Nome do Jogador X</p></div> 
+            <div id="alterar-jogador-o" onclick="altera_nome_o()"><p>Alterar Nome do Jogador O</p></div>     
+        </div>
 
     </div>
 

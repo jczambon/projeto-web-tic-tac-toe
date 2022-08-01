@@ -94,12 +94,31 @@ function checar_condiçoes(botao) {
 
 function mudar_placar(n_jogador){
     if (n_jogador == 1){
-        contador1 += 1
+        contador1 += 1;
     } else if (n_jogador == 0) {
-        contador2 += 1
+        contador2 += 1;
     } else {
-        contador1 = 0
-        contador2 = 0
+        contador1 = 0;
+        contador2 = 0;
     }
-    placar.innerHTML = contador1 + ' x ' + contador2
+    placar.innerHTML = contador1 + ' x ' + contador2;
+
 }   
+
+
+function altera_nome_o(){
+    let jogadoro = document.getElementById("jogador o");
+    let nome = prompt("Digite o nome do jogador O:", jogadoro.innerHTML);
+    if (nome != null) {
+        jogadoro.innerHTML = nome;
+      }
+}
+
+
+function altera_nome_x(){
+    let jogadorx = document.getElementById("jogador x");
+    let nome = prompt("Digite o nome do jogador X:", jogadorx.innerHTML);
+    if (nome != null) {
+      jogadorx.innerHTML = nome;
+    }
+}

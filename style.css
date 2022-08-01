@@ -54,7 +54,11 @@
     display: block;
   }
 
-  #alterar-nome {
+  #alterar-nome{
+    display: flex;
+  }
+
+  #alterar-jogador-x {
     font-size: 2vmin;
     padding: 2vmin;
     text-align: center;
@@ -64,6 +68,18 @@
     margin: 1em auto 0 auto;
     display: block;
   }
+
+  #alterar-jogador-o {
+    font-size: 2vmin;
+    padding: 2vmin;
+    text-align: center;
+    background-color: rgb(100, 93, 117);
+    color: #ffffff;
+    position: relative;
+    margin: 1em auto 0 auto;
+    display: inline-block;
+  }
+
 
   .infos{
     color: white;
@@ -104,3 +120,8 @@
   .icon{
     color: rgb(74, 23, 216);
   }
+
+  .nome_peca{
+    display: inline;
+  }
+
