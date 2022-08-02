@@ -2,10 +2,10 @@
 Trabalho em grupo, da disciplina de Programação Web, da graduação de Sistemas de Informação da UFSC.
 
 ## Integrantes:
- - João Victor Neves Zaniboni (21100505)
- - José Carlos Zambon de Carvalho (21104934)
- - Pedro Guimarães Caninas (21100509)
- - Pedro Henrique Leão Schiavinatto (21104935)
+ - João Victor Neves Zaniboni (21100505) - Lógica dos Jogadores e dos Botões de Alterar
+ - José Carlos Zambon de Carvalho (21104934) - Lógica do Placar e dos Botões de Resetar
+ - Pedro Guimarães Caninas (21100509) - Pop-Up de Empate e Lógica do Jogo
+ - Pedro Henrique Leão Schiavinatto (21104935) - Front-end (HTML, CSS)
 
 ## Introdução
 - O projeto realizado é uma aplicação Web do Jogo da Velha
