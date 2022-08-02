@@ -51,7 +51,7 @@ function vitoria(sequencia_vitoriosa, tabuleiro) {
 function continuar() {
     let opçoes = document.getElementsByClassName("opçoes")[0]
     opçoes.style.display = "none"
-    opçoes.style.right = "42.188%"
+    opçoes.style.left = ""
     const tabuleiro = Array.from(document.getElementsByClassName("button-option"))
     tabuleiro.forEach(botao => {botao.innerText = ""; botao.style.color = ""})
     document.getElementsByClassName("icon")[começa].style.color = "green"
@@ -59,7 +59,7 @@ function continuar() {
 
 function pausar() {
     let opçoes = document.getElementsByClassName("opçoes")[0]
-    opçoes.style.right = "8%"
+    opçoes.style.left = "70%"
 }
 
 function empate(tabuleiro){

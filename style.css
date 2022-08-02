@@ -131,11 +131,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
   position: absolute;
-  top: 32%;
-  right: 42.188%;
+  top: 27vmin;
   background-color: rgb(74, 23, 216);
-  height: 220px;
-  width: 300px;
+  height: 35vmin;
+  width: 40vmin;
 }
 
 .texto_alerta{
@@ -147,8 +146,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 151px;
+  height: 17.5vmin;
+  width: 21vmin;
 }
 
 .texto_alerta > p {
@@ -161,10 +160,10 @@
   align-items: center;
   color: #ffffff;
   font-size: 4vmin;
-  height: 100px;
-  width: 150px;
+  height: 17.5vmin;
+  width: 20vmin;
 }
 
 #sim {
-  padding-right: 60px;
+  padding-right: 4vmin;
 }
