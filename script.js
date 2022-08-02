@@ -9,6 +9,7 @@ window.onload = function iniciar() {
 
 const condiçoes = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 var turno = 0
+var começa = 0
 
 let contador1 = 0
 let contador2 = 0
@@ -25,6 +26,7 @@ function vitoria(sequencia_vitoriosa, tabuleiro) {
         sequencia_vitoriosa.forEach(botao => botao.style.color = "")
         document.getElementById(ganhador).style.color = ""
         tabuleiro.forEach(botao => {botao.innerText = ""; botao.disabled = false})
+        document.getElementsByClassName("icon")[começa].style.color = "green"
     }
     
     if (turno == 0) {
@@ -41,18 +43,31 @@ function vitoria(sequencia_vitoriosa, tabuleiro) {
 
     tabuleiro.forEach(botao => botao.disabled = true)
     sequencia_vitoriosa.forEach(botao => botao.style.color = "green")
+    começa = 1 - começa //inverter quem começa no fim da rodada
     return true
 }
 
-function empate(tabuleiro){
-    async function resetar_round(){
-        await delay(2000)
-        tabuleiro.forEach(botao => {botao.innerText = ""; botao.style.color = ""})
-    }
 
+function continuar() {
+    let opçoes = document.getElementsByClassName("opçoes")[0]
+    opçoes.style.display = "none"
+    opçoes.style.right = "42.188%"
+    const tabuleiro = Array.from(document.getElementsByClassName("button-option"))
+    tabuleiro.forEach(botao => {botao.innerText = ""; botao.style.color = ""})
+    document.getElementsByClassName("icon")[começa].style.color = "green"
+}
+
+function pausar() {
+    let opçoes = document.getElementsByClassName("opçoes")[0]
+    opçoes.style.right = "8%"
+}
+
+function empate(tabuleiro){
     tabuleiro.forEach(botao => botao.style.color = "red")
-    resetar_round()
-    
+    começa = 1 - começa 
+
+    let opçoes = document.getElementsByClassName("opçoes")[0]
+    opçoes.style.display = "flex"
 }
 
 function botao_valido(botao) {
@@ -68,18 +83,16 @@ function checar_condiçoes(botao) {
     const tabuleiro = Array.from(document.getElementsByClassName("button-option")) //pega os botoes do tabuleiro    
 
     if (botao_valido(botao)) {          // checa se o lugar é valido
-        x_circulo = document.getElementsByClassName("icon")
+        let x_circulo = document.getElementsByClassName("icon")
         if (turno == 0) {
             x_circulo[1].style.color = "green"
             x_circulo[0].style.color = "rgb(74, 23, 216)"
             botao.innerText = "X"
-
             turno = 1
         } else {
             x_circulo[0].style.color = "green"
             x_circulo[1].style.color = "rgb(74, 23, 216)"
             botao.innerText = "O"
-            document.getElementsByClassName("icon")[0].style.color = "green"
             turno = 0
         }
 

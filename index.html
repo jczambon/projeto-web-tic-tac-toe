@@ -10,14 +10,21 @@
     <script src="./script.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
+
+
     <title>Projeto Web - Jogo da Velha</title>
 </head>
 <body style="background-color: black;">
-
-    
-
+    <form class="opçoes" action="">
+        <div class="texto_alerta">
+            <p>Desejam iniciar novamente?</p>
+        </div>
+        <div class="pergunta">
+        <b id="sim" onclick="continuar()">Sim</b>
+        <b id="nao" onclick="pausar()">Não</b>
+    </div>
+    </form>
     <div class="wrapper">
-
         <div class="infos">
 
             <div class="nome-jogador" id="jog1">

@@ -125,3 +125,46 @@
     display: inline;
   }
 
+.opçoes {
+  z-index: 1;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+  top: 32%;
+  right: 42.188%;
+  background-color: rgb(74, 23, 216);
+  height: 220px;
+  width: 300px;
+}
+
+.texto_alerta{
+  font-size: 3vmin;
+  padding: 2vmin;
+  text-align: center; 
+  color: #ffffff;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 151px;
+}
+
+.texto_alerta > p {
+  padding-top: 20px;
+}
+
+.pergunta {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ffffff;
+  font-size: 4vmin;
+  height: 100px;
+  width: 150px;
+}
+
+#sim {
+  padding-right: 60px;
+}
