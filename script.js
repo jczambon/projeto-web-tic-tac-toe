@@ -3,9 +3,8 @@ window.onload = function iniciar() {
     let contador2 = 0
     placar = document.getElementsByClassName("div-placar")[0]
     placar.innerHTML = contador1 + ' x ' + contador2
+    document.getElementsByClassName("icon")[0].style.color = "green"
 
-    // criar jogadores
-    // ?
 }
 
 const condiçoes = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
@@ -17,7 +16,6 @@ let placar = document.getElementsByClassName("div-placar")[0]
 
 function delay(tempo) {
     return new Promise(resolve => setTimeout(resolve, tempo))
-    //pontuar(turno)
 }
 
 
@@ -70,11 +68,18 @@ function checar_condiçoes(botao) {
     const tabuleiro = Array.from(document.getElementsByClassName("button-option")) //pega os botoes do tabuleiro    
 
     if (botao_valido(botao)) {          // checa se o lugar é valido
+        x_circulo = document.getElementsByClassName("icon")
         if (turno == 0) {
+            x_circulo[1].style.color = "green"
+            x_circulo[0].style.color = "rgb(74, 23, 216)"
             botao.innerText = "X"
+
             turno = 1
         } else {
+            x_circulo[0].style.color = "green"
+            x_circulo[1].style.color = "rgb(74, 23, 216)"
             botao.innerText = "O"
+            document.getElementsByClassName("icon")[0].style.color = "green"
             turno = 0
         }
 
@@ -82,11 +87,15 @@ function checar_condiçoes(botao) {
             sequencia = [tabuleiro[combinaçao[0]], tabuleiro[combinaçao[1]], tabuleiro[combinaçao[2]]]
 
             if (sequencia.every(botao => botao.innerText === sequencia[0].innerText && botao.innerText !== "")) {
+                x_circulo[0].style.color = "rgb(74, 23, 216)"
+                x_circulo[1].style.color = "rgb(74, 23, 216)"
                 this.v = vitoria(sequencia, tabuleiro)
             }
         })  
 
         if (this.v == false && tabuleiro.every(botao => botao.innerHTML !== "")){ // se não tem mais espaços e a vitoria aconteceu
+            x_circulo[0].style.color = "rgb(74, 23, 216)"
+            x_circulo[1].style.color = "rgb(74, 23, 216)"
             empate(tabuleiro)
         }
     }
