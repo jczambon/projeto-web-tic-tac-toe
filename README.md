@@ -22,4 +22,4 @@ Trabalho em grupo, da disciplina de Programação Web, da graduação de Sistema
   - Se o jogo empatar, pode ser pausado para análise do tabuleiro
 
 ## Apresentação do Projeto
-- <a href="https://youtu.be/7HyeTPkFpGw" target="_blank">Youtube</a>
+- <a href="https://youtu.be/eOg7jDho1Qw" target="_blank">Youtube</a>
